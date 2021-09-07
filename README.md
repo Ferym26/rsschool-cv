@@ -1,1 +1,1 @@
-# rsschool-cv
+https://Ferym26.github.io/rsschool-cv/cv
