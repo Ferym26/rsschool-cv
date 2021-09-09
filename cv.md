@@ -1,4 +1,4 @@
-# [rsschool-cv](https://Ferym26.github.io/rsschool-cv/cv/)
+# [rsschool-cv](https://ferym26.github.io/rsschool-cv/cv/)
 ## Гордей Евгений
 ### Contacts:
  - **tg**: @Ferymm
