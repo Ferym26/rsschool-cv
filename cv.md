@@ -1,11 +1,11 @@
 # [rsschool-cv](https://Ferym26.github.io/rsschool-cv/cv/)
 ## Гордей Евгений
-### Contacts: 
+### Contacts:
  - **tg**: @Ferymm
  - **mail**: ferym26@gmail.com 
-### About me: 
+### About me:
 I am 35 years old, I work as a freelance front-end developer. My goal is to update and structure js knowledge.
-### Skills: 
+### Skills:
  - HTML5/CSS3/JS
  - SASS, PUG
  - Gsap animations
@@ -16,7 +16,7 @@ I am 35 years old, I work as a freelance front-end developer. My goal is to upda
  - FireBase
  - Experience with Google PageSpeed optimizations 90+
  - vuejs (nuxtjs)
-### Code example: 
+### Code example:
 ```
 const calculateAge = (a, b) => {
 	if (a < b) {
@@ -30,10 +30,10 @@ const calculateAge = (a, b) => {
 	}
 }
 ```
-### Experience: 
+### Experience:
  - 4 years page-proofs
  - 1 year front-end
-### Education: 
+### Education:
  - BELARUSIAN STATE AGRARIAN TECHNICAL UNIVERSITY
  - IT-academy "Base JS"
 ### English:
