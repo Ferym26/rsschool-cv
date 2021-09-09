@@ -2,7 +2,7 @@
 ## Гордей Евгений
 ### Contacts:
  - **tg**: @Ferymm
- - **mail**: ferym26@gmail.com 
+ - **mail**: ferym26@gmail.com
 ### About me:
 I am 35 years old, I work as a freelance front-end developer. My goal is to update and structure js knowledge.
 ### Skills:
