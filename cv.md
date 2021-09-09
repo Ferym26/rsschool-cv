@@ -1,10 +1,10 @@
 # [rsschool-cv](https://Ferym26.github.io/rsschool-cv/cv/)
-## Гордей Евгений Викторович 
+## Гордей Евгений
 ### Contacts: 
  - **tg**: @Ferymm
  - **mail**: ferym26@gmail.com 
 ### About me: 
-Краткая информация о себе (ваша цель и приоритеты, подчеркните свои сильные стороны, расскажите о своём опыте работы, если опыта работы нет, расскажите о своём стремлении и способности быстро учиться и узнавать новое)
+I am 35 years old, I work as a freelance front-end developer. My goal is to update and structure js knowledge.
 ### Skills: 
  - HTML5/CSS3/JS
  - SASS, PUG
