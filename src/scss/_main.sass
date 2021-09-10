@@ -29,11 +29,16 @@ body
 	width: 100%
 	max-width: 1200px
 	margin: 0 auto
+	padding: 0 15px
 
 .cv-header
 	display: flex
 	align-items: flex-end
 	padding: 30px 0
+
+	+media($lg)
+		flex-direction: column
+		align-items: center
 
 .user-ava
 	flex: 0 0 150px
@@ -41,6 +46,12 @@ body
 	margin-right: 30px
 	border-radius: 50%
 	overflow: hidden
+
+	+media($lg)
+		flex: 0 0 100px
+		max-width: 100px
+		margin-right: 0
+		margin-bottom: 15px
 
 .user-descr
 
@@ -73,6 +84,7 @@ body
 			font-size: 14px
 
 .cv-body
+	padding-bottom: 30px
 
 .cv-section
 
@@ -80,10 +92,65 @@ body
 		margin-bottom: 30px
 
 	&__title
+		position: relative
+		margin-bottom: 10px
+		z-index: 5
+
+		&:before
+			content: ''
+			position: absolute
+			display: block
+			width: 40px
+			height: 30px
+			top: -3px
+			left: -8px
+			background-color: blueviolet
+			z-index: -5
+
+		&::first-letter
+			color: #fff
+
+	&__body
+		padding-left: 40px
+
+		+media($lg)
+			padding-left: 0
+
+	.list
+		padding-left: 26px
+
+		&__item
+			list-style-type: disc
+
+			&:not(:last-child)
+				margin-bottom: 5px
+
+.code-box
+	margin: 0
+	padding-left: 26px
+	tab-size: 4
+	counter-reset: pre
+	white-space: normal
+
+	+media($lg)
+		tab-size: 2
+
+	.code-row
+		display: list-item
+		counter-increment: pre
+		white-space: pre-wrap
+		font-family: inherit
+
+		+media($lg)
+			font-size: 12px
+
+		&::marker
+			color: darkgray
+			content: counter(pre, decimal-leading-zero) ' '
 
 .cv-footer
 	padding: 10px 0
-	background-color: #444
+	background-color: var(--color-accent)
 
 	&__inner
 		display: flex
@@ -94,6 +161,9 @@ body
 		font-size: 18px
 		text-align: center
 		color: #fff
+
+		+media($lg)
+			font-size: 16px
 
 	.gitlink
 		display: flex
@@ -115,6 +185,12 @@ body
 		&__text
 			display: block
 
+			+media($lg)
+				display: none
+
 	.rs-logo
 		display: block
 		width: 100px
+
+		+media($lg)
+			width: 60px
