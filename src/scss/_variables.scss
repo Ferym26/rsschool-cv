@@ -1,10 +1,14 @@
 // Colors
 :root {
-	--color-accent:	#444;
+	--color-accent:	blueviolet;
+	--color-gray:	#444;
+	--color-text: 	#222;
+	--color-white:	floralwhite
 }
 
 // Fonts
 $font-main:			'Lato', sans-serif;
 
 //Grid
-$lg:					1024px;
+$lg:				1200px;
+$md:				768px;

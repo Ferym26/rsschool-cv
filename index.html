@@ -8,8 +8,20 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/mono-blue.min.css">
 	<link rel="stylesheet" href="css/style.css">
-
+	<style>
+		.user-ava img {
+			width: 150px;
+			height: 150px;
+		}
+		@media screen and (max-width: 1199px) {
+			.user-ava img {
+				width: 80px;
+				height: 80px;
+			}
+		}
+	</style>
 	<!-- Мета инфо-->
 	<link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
@@ -20,98 +32,150 @@
 	<div class="wrapper">
 		<main class="main">
 			<div class="container">
-				<header class="cv-header">
-					<div class="user-ava">
-						<img src="images/avatar.jpg" alt="avatar">
-					</div>
-					<div class="user-descr">
-						<h1 class="user-name">Gordey Evgeniy</h1>
-						<h2 class="user-prof">Front-end developer</h2>
-						<div class="social">
-							<div class="social__item">
-								<div class="social__item-logo">
-									<img src="images/telegram.svg" alt="telegram icon">
+				<div class="cv-inner">
+					<aside class="cv-sidebar">
+						<header class="cv-header">
+							<figure class='cv-user'>
+								<div class="user-ava">
+									<img src="images/avatar.jpg" alt="avatar">
 								</div>
-								<div class="social__item-text">Telegram</div>
+								<figcaption>
+									<h1 class="user-name">Gordey Evgeniy</h1>
+									<h2 class="user-prof">Front-end developer</h2>
+								</figcaption>
+							</figure>
+							<ul class="social">
+								<li class="social__item">
+									<a href="tg://user?id=@Ferymm" class="social__link">
+										<div class="social__item-logo">
+											<img src="images/telegram.svg" alt="telegram icon">
+										</div>
+										<div class="social__item-text">Telegram</div>
+									</a>
+								</li>
+								<li class="social__item">
+									<a href="mailto:ferym26@gmail.com" class="social__link">
+										<div class="social__item-logo">
+											<img src="images/email.svg" alt="email icon">
+										</div>
+										<div class="social__item-text">Email</div>
+									</a>
+								</li>
+							</ul>
+						</header>
+					</aside>
+					<div class="cv-body">
+						<section class="cv-section" id='about'>
+							<h3 class="cv-section__title">About me:</h3>
+							<div class="cv-section__body">
+								<p>I am 35 years old, I work as a freelance front-end developer. My goal is to update and structure js knowledge.</p>
+								<p>My hobbies:</p>
+								<ul class="list">
+									<li class="list__item">Motorcycling</li>
+									<li class="list__item">Biking</li>
+									<li class="list__item">Running</li>
+									<li class="list__item">Playing jew's harp</li>
+								</ul>
 							</div>
-							<div class="social__item">
-								<div class="social__item-logo">
-									<img src="images/email.svg" alt="email icon">
-								</div>
-								<div class="social__item-text">Email</div>
+						</section>
+						<section class="cv-section" id='skills'>
+							<h3 class="cv-section__title">Skills:</h3>
+							<div class="cv-section__body">
+								<ul class="list">
+									<li class="list__item">HTML5/CSS3/JS</li>
+									<li class="list__item">SASS, PUG</li>
+									<li class="list__item">Gsap animations</li>
+									<li class="list__item">gulp, webpack</li>
+									<li class="list__item">Bootstrap</li>
+									<li class="list__item">BEM</li>
+									<li class="list__item">git</li>
+									<li class="list__item">FireBase</li>
+									<li class="list__item">Experience with Google PageSpeed optimizations 90+</li>
+									<li class="list__item">vuejs (nuxtjs)</li>
+								</ul>
 							</div>
-						</div>
+						</section>
+						<section class="cv-section" id='code'>
+							<h3 class="cv-section__title">Code example:</h3>
+							<div class="cv-section__body">
+								<pre class='code-box'>
+									<code class='code-row'>const calculateAge = (a, b) =&gt; {</code>
+									<code class='code-row'>	if (a &lt; b) {</code>
+									<code class='code-row'>		return `You are ${b - a} ${b - a != 1 ? 'years' : 'year'} old`;</code>
+									<code class='code-row'>	}</code>
+									<code class='code-row'>	else if (a &gt; b) {</code>
+									<code class='code-row'>		return `You will be born in ${a - b} ${a - b != 1 ? 'years' : 'year'}`;</code>
+									<code class='code-row'>	}</code>
+									<code class='code-row'>	else {</code>
+									<code class='code-row'>		return `You were born this very year!`;</code>
+									<code class='code-row'>	}</code>
+									<code class='code-row'>}</code>
+								</pre>
+							</div>
+						</section>
+						<section class="cv-section" id='experience'>
+							<h3 class="cv-section__title">Experience:</h3>
+							<div class="cv-section__body">
+								<ul class="list">
+									<li class="list__item">4 years page-proofs</li>
+									<li class="list__item">1 year front-end</li>
+								</ul>
+							</div>
+						</section>
+						<section class="cv-section" id='examples'>
+							<h3 class="cv-section__title">Work examples:</h3>
+							<div class="cv-section__body">
+								<ul class="cv-exmpl-list">
+									<li class="cv-exmpl-item">
+										<figure class="cv-exmpl-item__fig">
+											<img class='cv-exmpl-item__pic' src="images/miks-soft.jpg" alt="image">
+											<figcaption class="cv-exmpl-item__descr">
+												<a class="cv-exmpl-item__title" href='https://miks-soft.com/' target='_blank'>Miks</a>
+												<p class="cv-exmpl-item__text">PUG/SASS/JS-animations</p>
+											</figcaption>
+										</figure>
+									</li>
+									<li class="cv-exmpl-item">
+										<figure class="cv-exmpl-item__fig">
+											<img class='cv-exmpl-item__pic' src="images/trs.jpg" alt="image">
+											<figcaption class="cv-exmpl-item__descr">
+												<a class="cv-exmpl-item__title" href='https://trs.by/' target='_blank'>TRS</a>
+												<p class="cv-exmpl-item__text">Vue/Nuxt</p>
+											</figcaption>
+										</figure>
+									</li>
+									<li class="cv-exmpl-item">
+										<figure class="cv-exmpl-item__fig">
+											<img class='cv-exmpl-item__pic' src="images/naturino.jpg" alt="image">
+											<figcaption class="cv-exmpl-item__descr">
+												<a class="cv-exmpl-item__title" href='https://naturino.by/' target='_blank'>Naturino</a>
+												<p class="cv-exmpl-item__text">Vue/PUG/SASS/JS-animations</p>
+											</figcaption>
+										</figure>
+									</li>
+								</ul>
+							</div>
+						</section>
+						<section class="cv-section" id='education'>
+							<h3 class="cv-section__title">Education:</h3>
+							<div class="cv-section__body">
+								<ul class="list">
+									<li class="list__item">BELARUSIAN STATE AGRARIAN TECHNICAL UNIVERSITY</li>
+									<li class="list__item">IT-academy "Base JS"</li>
+								</ul>
+							</div>
+						</section>
+						<section class="cv-section" id='english'>
+							<h3 class="cv-section__title">English:</h3>
+							<div class="cv-section__body">
+								<ul class="list">
+									<li class="list__item">A2</li>
+								</ul>
+							</div>
+						</section>
 					</div>
-				</header>
-				<div class="cv-body">
-					<section class="cv-section">
-						<h3 class="cv-section__title">About me:</h3>
-						<div class="cv-section__body">
-							<p>I am 35 years old, I work as a freelance front-end developer. My goal is to update and structure js knowledge.</p>
-						</div>
-					</section>
-					<section class="cv-section">
-						<h3 class="cv-section__title">Skills:</h3>
-						<div class="cv-section__body">
-							<ul class="list">
-								<li class="list__item">HTML5/CSS3/JS</li>
-								<li class="list__item">SASS, PUG</li>
-								<li class="list__item">Gsap animations</li>
-								<li class="list__item">gulp, webpack</li>
-								<li class="list__item">Bootstrap</li>
-								<li class="list__item">BEM</li>
-								<li class="list__item">git</li>
-								<li class="list__item">FireBase</li>
-								<li class="list__item">Experience with Google PageSpeed optimizations 90+</li>
-								<li class="list__item">vuejs (nuxtjs)</li>
-							</ul>
-						</div>
-					</section>
-					<section class="cv-section">
-						<h3 class="cv-section__title">Code example:</h3>
-						<div class="cv-section__body">
-							<pre class='code-box'>
-								<code class='code-row'>const calculateAge = (a, b) =&gt; {</code>
-								<code class='code-row'>	if (a &lt; b) {</code>
-								<code class='code-row'>		return `You are ${b - a} ${b - a != 1 ? 'years' : 'year'} old.`;</code>
-								<code class='code-row'>	}</code>
-								<code class='code-row'>	else if (a &gt; b) {</code>
-								<code class='code-row'>		return `You will be born in ${a - b} ${a - b != 1 ? 'years' : 'year'}.`;</code>
-								<code class='code-row'>	}</code>
-								<code class='code-row'>	else {</code>
-								<code class='code-row'>		return `You were born this very year!`;</code>
-								<code class='code-row'>	}</code>
-								<code class='code-row'>}</code>
-							</pre>
-						</div>
-					</section>
-					<section class="cv-section">
-						<h3 class="cv-section__title">Experience:</h3>
-						<div class="cv-section__body">
-							<ul class="list">
-								<li class="list__item">4 years page-proofs</li>
-								<li class="list__item">1 year front-end</li>
-							</ul>
-						</div>
-					</section>
-					<section class="cv-section">
-						<h3 class="cv-section__title">Education:</h3>
-						<div class="cv-section__body">
-							<ul class="list">
-								<li class="list__item">BELARUSIAN STATE AGRARIAN TECHNICAL UNIVERSITY</li>
-								<li class="list__item">IT-academy "Base JS"</li>
-							</ul>
-						</div>
-					</section>
-					<section class="cv-section">
-						<h3 class="cv-section__title">English:</h3>
-						<div class="cv-section__body">
-							<ul class="list">
-								<li class="list__item">A1</li>
-							</ul>
-						</div>
-					</section>
 				</div>
+
 			</div>
 		</main>
 		<footer class="cv-footer">
@@ -128,6 +192,43 @@
 				</div>
 			</div>
 		</footer>
+		<div class="cv-overlay js_overlay is-hidden"></div>
+
+		<div class="cv-menu js_menu is-hidden">
+			<button class="cv-burger js_cv-menu__open" aria-hidden='true' aria-label='Open mobile menu'>
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 276.167 276.167">
+					<path d="M33.144,2.471C15.336,2.471,0.85,16.958,0.85,34.765s14.48,32.293,32.294,32.293s32.294-14.486,32.294-32.293
+						S50.951,2.471,33.144,2.471z"/>
+					<path d="M137.663,2.471c-17.807,0-32.294,14.487-32.294,32.294s14.487,32.293,32.294,32.293c17.808,0,32.297-14.486,32.297-32.293
+						S155.477,2.471,137.663,2.471z"/>
+					<path d="M243.873,67.059c17.804,0,32.294-14.486,32.294-32.293S261.689,2.471,243.873,2.471s-32.294,14.487-32.294,32.294
+						S226.068,67.059,243.873,67.059z"/>
+					<path d="M32.3,170.539c17.807,0,32.297-14.483,32.297-32.293c0-17.811-14.49-32.297-32.297-32.297S0,120.436,0,138.246
+						C0,156.056,14.493,170.539,32.3,170.539z"/>
+					<path d="M136.819,170.539c17.804,0,32.294-14.483,32.294-32.293c0-17.811-14.478-32.297-32.294-32.297
+						c-17.813,0-32.294,14.486-32.294,32.297C104.525,156.056,119.012,170.539,136.819,170.539z"/>
+					<path d="M243.038,170.539c17.811,0,32.294-14.483,32.294-32.293c0-17.811-14.483-32.297-32.294-32.297
+						s-32.306,14.486-32.306,32.297C210.732,156.056,225.222,170.539,243.038,170.539z"/>
+					<path d="M33.039,209.108c-17.807,0-32.3,14.483-32.3,32.294c0,17.804,14.493,32.293,32.3,32.293s32.293-14.482,32.293-32.293
+						S50.846,209.108,33.039,209.108z"/>
+					<path d="M137.564,209.108c-17.808,0-32.3,14.483-32.3,32.294c0,17.804,14.487,32.293,32.3,32.293
+						c17.804,0,32.293-14.482,32.293-32.293S155.368,209.108,137.564,209.108z"/>
+					<path d="M243.771,209.108c-17.804,0-32.294,14.483-32.294,32.294c0,17.804,14.49,32.293,32.294,32.293
+						c17.811,0,32.294-14.482,32.294-32.293S261.575,209.108,243.771,209.108z"/>
+				</svg>
+			</button>
+			<nav class='cv-menu__list'>
+				<a class='cv-menu__link' href="#about">About me</a>
+				<a class='cv-menu__link' href="#skills">Skills</a>
+				<a class='cv-menu__link' href="#code">Code example</a>
+				<a class='cv-menu__link' href="#experience">Experience</a>
+				<a class='cv-menu__link' href="#examples">Work examples</a>
+				<a class='cv-menu__link' href="#education">Education</a>
+				<a class='cv-menu__link' href="#english">English</a>
+			</nav>
+		</div>
 	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js" defer></script>
+	<script src='./js/script.js' defer></script>
 </body>
 </html>
