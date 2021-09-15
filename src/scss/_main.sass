@@ -1,5 +1,6 @@
 html
 	height: 100%
+	scroll-behavior: smooth
 
 body
 	position: relative
@@ -10,11 +11,18 @@ body
 	height: 100%
 	font-family: $font-main
 	font-size: 16px
-	color: #222
+	color: var(--color-text)
 	line-height: 1.2
 	font-weight: 400
 	background-color: beige
 	-webkit-overflow-scrolling: touch
+
+	&.fixed
+		padding-right: 17px
+		overflow: hidden
+
+		+media($lg)
+			padding-right: 0
 
 .wrapper
 	display: flex
@@ -27,52 +35,75 @@ body
 
 .container
 	width: 100%
-	max-width: 1200px
+	max-width: 1100px
 	margin: 0 auto
 	padding: 0 15px
 
-.cv-header
+.cv-inner
 	display: flex
-	align-items: flex-end
-	padding: 30px 0
+	background: var(--color-white)
+	padding: 0 15px
 
 	+media($lg)
+		flex-direction: column
+
+.cv-header
+	position: relative
+	padding: 40px 0 0
+
+	.social
+		margin-top: 30px
+
+.cv-sidebar
+	flex: 0 0 300px
+	max-width: 300px
+
+	+media($lg)
+		flex: 0 0 100%
+		max-width: 100%
+
+.cv-user
+
+	+media($lg)
+		display: flex
 		flex-direction: column
 		align-items: center
 
 .user-ava
 	flex: 0 0 150px
 	max-width: 150px
-	margin-right: 30px
+	margin-bottom: 30px
 	border-radius: 50%
 	overflow: hidden
+	pointer-events: none
+	user-select: none
 
 	+media($lg)
-		flex: 0 0 100px
-		max-width: 100px
-		margin-right: 0
+		flex: 0 0 80px
+		max-width: 80px
 		margin-bottom: 15px
-
-.user-descr
 
 .user-name
 	margin-bottom: 10px
 	font-size: 30px
 
+	+media($lg)
+		font-size: 20px
+		text-align: center
+
 .user-prof
-	margin-bottom: 10px
 	font-size: 20px
 
+	+media($lg)
+		font-size: 14px
+		text-align: center
+
 .social
-	display: flex
 
 	&__item
-		display: flex
-		align-items: center
-		width: 100%
 
 		&:not(:last-child)
-			margin-right: 30px
+			margin-bottom: 10px
 
 		&-logo
 			flex: 0 0 25px
@@ -82,29 +113,50 @@ body
 
 		&-text
 			font-size: 14px
+			color: var(--color-text)
+
+	&__link
+		display: flex
+		align-items: center
+		width: 100%
+		text-decoration: none
 
 .cv-body
-	padding-bottom: 30px
+	padding: 40px 0
 
 .cv-section
 
 	&:not(:last-child)
-		margin-bottom: 30px
+		margin-bottom: 50px
+
+	&:hover
+
+		.cv-section__title
+			color: #fff
+
+			&:before
+				width: calc(100% + 14px)
 
 	&__title
 		position: relative
+		display: inline-block
 		margin-bottom: 10px
+		font-size: 20px
+		transition: color 0.3s ease-in-out
 		z-index: 5
 
 		&:before
 			content: ''
 			position: absolute
 			display: block
-			width: 40px
+			width: 30px
 			height: 30px
 			top: -3px
 			left: -8px
-			background-color: blueviolet
+			background-color: var(--color-accent)
+			transform-origin: 0 50%
+			transition: width 0.3s ease-in-out
+			will-change: width
 			z-index: -5
 
 		&::first-letter
@@ -125,6 +177,11 @@ body
 			&:not(:last-child)
 				margin-bottom: 5px
 
+	p
+
+		&:not(:last-child)
+			margin-bottom: 10px
+
 .code-box
 	margin: 0
 	padding-left: 26px
@@ -140,6 +197,7 @@ body
 		counter-increment: pre
 		white-space: pre-wrap
 		font-family: inherit
+		font-size: 14px
 
 		+media($lg)
 			font-size: 12px
@@ -150,7 +208,7 @@ body
 
 .cv-footer
 	padding: 10px 0
-	background-color: var(--color-accent)
+	background-color: var(--color-gray)
 
 	&__inner
 		display: flex
@@ -194,3 +252,147 @@ body
 
 		+media($lg)
 			width: 60px
+
+.cv-burger
+	position: absolute
+	top: 30px
+	left: calc(100% + 15px)
+	width: 30px
+	height: 30px
+	padding: 0
+	border: none
+	box-shadow: 0px 0px 0px #ccc
+	background-color: var(--color-white)
+	transition: box-shadow 0.3s ease
+	cursor: pointer
+	pointer-events: initial
+	z-index: 1200
+
+	+media($lg)
+		left: calc(100% + 8px)
+		width: 24px
+		height: 24px
+
+	&:after
+		content: ''
+		display: block
+		position: absolute
+		top: -15px
+		left: -15px
+		width: 60px
+		height: 60px
+		background-color: inherit
+		border-radius: 0 10px 10px 0
+		z-index: -5
+
+		+media($lg)
+			top: -8px
+			left: -8px
+			width: 40px
+			height: 40px
+
+.cv-overlay
+	position: fixed
+	width: 100%
+	height: 100%
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	background-color: rgba(0, 0, 0, 0.65)
+	backdrop-filter: blur(8px)
+	opacity: 1
+	transition: opacity 0.3s ease-in-out
+	will-change: opacity
+	z-index: 1000
+
+	&.is-hidden
+		opacity: 0
+		pointer-events: none
+
+.cv-menu
+	position: fixed
+	width: 260px
+	height: 100%
+	top: 0
+	left: 0
+	bottom: 0
+	padding: 30px 15px
+	background-color: var(--color-white)
+	box-shadow: 0px 0px 0px #ccc
+	pointer-events: none
+	transform: translate(0%, 0)
+	transition: transform 0.3s ease-in-out, box-shadow 0.3s ease
+	will-change: transform
+	z-index: 1100
+
+	&.is-hidden
+		transform: translate(-100%, 0)
+
+		&:hover
+
+			+mediaMin($lg)
+				box-shadow: 5px 5px 10px #ccc
+				transform: translate(-90%, 0)
+
+		.cv-burger
+
+			&:after
+				box-shadow: 5px 5px 10px #ccc
+
+		.cv-menu__link
+
+			+media($lg)
+				opacity: 0
+				transform: translate(-60px, 0)
+				transition-delay: 0
+				transition: none
+
+	&__close
+		position: fixed
+		top: 15px
+		right: 30px
+		width: 30px
+		height: 30px
+		padding: 0
+		border: none
+		background-color: transparent
+
+		.icon
+			fill: #fff
+
+	&__list
+		display: flex
+		flex-direction: column
+
+		+media($lg)
+			max-width: 300px
+			margin: 0 auto
+
+	&__link
+		display: inline-block
+		font-weight: 700
+		font-size: 20px
+		letter-spacing: 5px
+		text-decoration: none
+		color: var(--color-text)
+		white-space: nowrap
+		opacity: 1
+		transform: translate(0px, 0)
+		transition: transform 0.3s ease-in-out, opacity 0.3s ease, color 0.2s ease
+		pointer-events: initial
+
+		+media($lg)
+
+		&:hover
+			color: var(--color-accent)
+
+		&:not(:last-child)
+			margin-bottom: 20px
+
+		&::first-letter
+			color: var(--color-accent)
+
+		@for $i from 1 through 7
+			&:nth-child(#{$i})
+				transition-delay: $i * 0.05s
